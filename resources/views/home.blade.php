@@ -13,7 +13,12 @@
     <header class="p-4">
         <h1>Ciao</h1>
     </header>
+    @dd($treni, $today)
+    {{-- @php
+        var_dump($today->date);
+    @endphp --}}
 
+    {{ $today }}
 </body>
 
 </html>
