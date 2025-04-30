@@ -12,7 +12,9 @@ class PageController extends Controller
 
     public function index (){
         $today = Carbon::today();
-        $treni= Train::where("orario_di_arrivo", ">=", $today)->get();
-        return view("home", compact("treni", "today"));
+        $treni= Train::where("orario_di_partenza", ">=", $today)
+        ->OrderBy("orario_di_partenza", "asc")
+        ->get();
+        return view("home", compact("treni"));
     }
 }

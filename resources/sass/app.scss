@@ -7,8 +7,38 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Share Tech Mono", monospace;
+    font-style: normal;
+    color: white;
+}
+
+body {
+    background-color: rgb(31, 29, 29);
+    min-height: 100vh;
+}
+
+header {
+    background-color: black;
+    text-align: center;
+}
+
+th {
+    color: orange;
+    padding: .625rem;
+}
+
+td{
+    padding: .625rem;
+}
+
+.cancellato{
+    color: red;
+}
+
+.ritardo{
+    color:rgb(255, 200, 0);
 }
