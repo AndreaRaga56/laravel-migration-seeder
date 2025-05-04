@@ -16,6 +16,11 @@
     color: white;
 }
 
+.table{
+    color: white;
+    background-color: rgb(31, 29, 29);
+}
+
 body {
     background-color: rgb(31, 29, 29);
     min-height: 100vh;
@@ -26,19 +31,19 @@ header {
     text-align: center;
 }
 
-th {
+.table th {
     color: orange;
     padding: .625rem;
 }
 
-td{
+.table td{
     padding: .625rem;
 }
 
-.cancellato{
+.table .cancellato{
     color: red;
 }
 
-.ritardo{
+.table .ritardo{
     color:rgb(255, 200, 0);
 }

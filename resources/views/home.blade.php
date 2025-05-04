@@ -18,40 +18,46 @@
     </header>
 
     <div class="container mt-4">
-        <table>
-            <tr>
-                <th>Codice</th>
-                <th>Azienda</th>
-                <th>Carrozze</th>
-                <th>Partenza</th>
-                <th>Arrivo</th>
-                <th>Orario di Partenza</th>
-                <th>Arrivo Stimato</th>
-                <th>In Orario</th>
-                <th>Cancellato</th>
-            </tr>
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Codice</th>
+                    <th>Azienda</th>
+                    <th>Carrozze</th>
+                    <th>Partenza</th>
+                    <th>Arrivo</th>
+                    <th>Orario di Partenza</th>
+                    <th>Arrivo Stimato</th>
+                    <th>In Orario</th>
+                    <th>Cancellato</th>
+                </tr>
+            </thead>
 
-            @foreach ($treni as $treno)
-                <tr>
-                    <td>{{ $treno->codice_treno }}</td>
-                    <td>{{ $treno->azienda }}</td>
-                    <td class="text-center">{{ $treno->totale_carrozze }}</td>
-                    <td>{{ $treno->stazione_di_partenza }}</td>
-                    <td>{{ $treno->stazione_di_arrivo }}</td>
-                    <td>{{ $treno->orario_di_partenza }}</td>
-                    <td>{{ $treno->orario_di_arrivo }}</td>
-                    @if($treno->is_in_orario == 1)
-                        <td class="text-center">SÌ</td>
-                    @else
-                        <td class="text-center ritardo">NO</td>
-                    @endif
-                    @if($treno->is_cancellato == 1)
-                        <td class="text-center cancellato">SÌ</td>
-                    @else
-                        <td class="text-center">NO</td>
-                    @endif
-                <tr>
-            @endforeach
+            <tbody>
+                @foreach ($treni as $treno)
+                    <tr>
+                        <td>{{ $treno->codice_treno }}</td>
+                        <td>{{ $treno->azienda }}</td>
+                        <td class="text-center">{{ $treno->totale_carrozze }}</td>
+                        <td>{{ $treno->stazione_di_partenza }}</td>
+                        <td>{{ $treno->stazione_di_arrivo }}</td>
+                        <td>{{ $treno->orario_di_partenza }}</td>
+                        <td>{{ $treno->orario_di_arrivo }}</td>
+                        @if ($treno->is_in_orario == 1)
+                            <td class="text-center">SÌ</td>
+                        @else
+                            <td class="text-center ritardo">NO</td>
+                        @endif
+                        @if ($treno->is_cancellato == 1)
+                            <td class="text-center cancellato">SÌ</td>
+                        @else
+                            <td class="text-center">NO</td>
+                        @endif
+                    <tr>
+                @endforeach
+            </tbody>
+
+
 
         </table>
     </div>
